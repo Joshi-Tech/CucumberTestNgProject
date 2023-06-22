@@ -53,6 +53,12 @@
         </dependency>
         <!-- Thanks for using https://jar-download.com -->
 
+        <!-- https://mvnrepository.com/artifact/com.deque/axe-selenium -->
+        <dependency>
+            <groupId>com.deque</groupId>
+            <artifactId>axe-selenium</artifactId>
+            <version>3.0</version>
+        </dependency>
 
 
 

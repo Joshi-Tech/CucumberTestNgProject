@@ -1,32 +1,25 @@
 package StepDefinitions;
 
-import Pages.HomePage;
 import Pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import tests.BaseTest;
 
 public class LoginSteps extends BaseTest {
-    WebDriver driver;
-    HomePage homePage;
-    LoginPage loginPage;
-
     @Given("Given user launches website {string}")
     public void given_user_launches_website(String url) {
         launchWebsite();
-        //WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(url);
     }
 
     @Then("click login option")
     public void click_login_option() {
-        homePage = new HomePage(driver);
         homePage.clickSignUpIcon();
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         homePage.clickLogin();
     }
 

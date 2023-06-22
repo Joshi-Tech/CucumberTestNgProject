@@ -11,9 +11,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import tests.BaseTest;
 
+import java.util.Random;
+
 public class SignupSteps extends BaseTest {
-    private WebDriver driver;
-    private HomePage homePage;
+    // private WebDriver driver;
+    // private HomePage homePage;
     private RegisterPage registerPage;
     private RegisterPage2 registerPage2;
 
@@ -54,6 +56,7 @@ public class SignupSteps extends BaseTest {
 
     @Then("type first name {string}")
     public void typeFirstName(String firstName) {
+
         registerPage.getFirstName(firstName);
     }
 
@@ -184,9 +187,9 @@ public class SignupSteps extends BaseTest {
 
     @Then("tear down browser")
     public void tearDownBrowser() {
-        try{
+        try {
             Thread.sleep(3000);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         tearDown();
